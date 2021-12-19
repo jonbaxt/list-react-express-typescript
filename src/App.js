@@ -100,20 +100,29 @@ const idSelectChange = (e) => {setIdSelect(e.target.value);}
 var list = userArray.map((element,index)=>{ return (<User key={index} element={element} setArray={setArray} updateUser={updateUser} sendObject={sendObject} />)});
 
   return (
-    <div className="App">
-      <div>
+    <div className='main'>
+      <h1>List with TypeScript Express Server</h1>
+      <p>Edit a user, delete a user at the bottom by selecting user's number, or create a new user.</p>
+      <div className='listborderbox'>
         {list}
       </div>
-      <div className='newUserBox'>
-        <h3>Create a New User</h3>
-        <h6>First Name: <input value={newFirst} onChange={firstNameChange} /> Last Name: <input value={newLast} onChange={lastNameChange} /></h6>
-        <h6>Email Address: <input value={newEmail} onChange={emailChange} /></h6>
-        <h6>Avatar URL: <input value={newAvatar} onChange={avatarChange} /></h6>
-        <button onClick={()=>createNewUser()}>Create New User</button>
+      <div className='newUserDiv'>
+        <div className='newUserBox'>
+          <h3>Create a New User</h3>
+          <h6>First Name: <input value={newFirst} onChange={firstNameChange} /> </h6>
+          <h6>Last Name: <input value={newLast} onChange={lastNameChange} /></h6>
+          <h6>Email Address: <input value={newEmail} onChange={emailChange} /></h6>
+          <h6>Avatar URL: <input value={newAvatar} onChange={avatarChange} /></h6>
+          <button onClick={()=>createNewUser()}>Create New User</button>
+        </div>
       </div>
       <div>
-        <h5>Delete User Id:<input type='number' value={idSelect} onChange={idSelectChange} /></h5>
-        <button onClick={()=> deleteUser()}>Delete</button>
+        <div className='newUserDiv'>
+          <div className='deleteUserBox'>
+            <h5>Delete a User by Id:<input type='number' value={idSelect} onChange={idSelectChange} /></h5>
+            <button onClick={()=> deleteUser()}>Delete</button>
+          </div>
+        </div>
       </div>
     </div>
   );

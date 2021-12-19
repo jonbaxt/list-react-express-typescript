@@ -16,14 +16,13 @@ const User = (props) => {
   return (
     <div className='box'>
       <div>
-      {`Id: ${props.element.id}`} Name: 
-        <input value={firstNameInput} onChange={handleFirstNameInput} />
-        <input value={lastNameInput} onChange={handleLastNameInput} />
+      Id: <strong>{`${props.element.id}`}</strong> 
+      <h6>First Name: <input value={firstNameInput} onChange={handleFirstNameInput} /> </h6>
+        <h6>Last Name: <input value={lastNameInput} onChange={handleLastNameInput} /></h6>
       </div>
       <img src={`${props.element.avatar}`} />
       <div>
-        Email:
-        <input value={emailInput} onChange={handleEmailInput} />
+        <h6>Email: <input value={emailInput} onChange={handleEmailInput} /></h6>
       </div>
       <button onClick={() =>transferBack()}>Update User</button>
     </div>
